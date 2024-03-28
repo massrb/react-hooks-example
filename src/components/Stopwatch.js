@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 
+// amount is the amount of increment/decrement
+// cycle means we cycled into or through a count of zero
 const Stopwatch = ({running, amount, cycle, showButtons}) => {
   // state to store time
   const [time, setTime] = useState(0);

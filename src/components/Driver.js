@@ -17,9 +17,6 @@ const Driver = () => {
     let prev = count
     let newCount = count + upd_by 
     setCount(newCount)
-    console.log('prev', prev)
-    console.log('count', newCount)
-    console.log('cycle', cycle)
     if (((prev > 0) && (newCount < 0)) ||
        ((prev < 0) && (newCount > 0)) || 
        (newCount === 0)) {
@@ -27,11 +24,11 @@ const Driver = () => {
        }
   }
   
-  const IncNum = () => {
+  const incNum = () => {
     UpdateCount(amount)
   };
 
-  const DecNum = () => {
+  const decNum = () => {
     UpdateCount(-Math.abs(amount))
   };
 
@@ -51,14 +48,14 @@ const Driver = () => {
         <Stopwatch running={true} amount={amount} cycle={cycle} showButtons={true} />
         <br/>
         <button
-          onClick={DecNum}
+          onClick={decNum}
           type="button"
           className="btn btn-primary btn-xl"
           style={{ marginRight: "15px" }}>
           Subract
         </button>
         <button
-          onClick={IncNum}
+          onClick={incNum}
           type="button"
           className="btn btn-primary btn-xl">
           Add
