@@ -5,18 +5,15 @@ import ClipLoader from "react-spinners/ClipLoader";
 const Loader = ({children}) => {
   const [isLoading, setLoading] = useState(true)
   
-  // After 5 seconds we will change state
+  // After 2 seconds we will change state
   // so that we are no longer loading.
 
   const startTimer = () => {
-    let timer = 5
-    setInterval(() => { 
-      if (timer <= 0) {
-        setLoading(false)
-      }
-      timer -= 1
+    let timer = setInterval(() => { 
+      setLoading(false)
+      clearInterval(timer)
     },
-    1000)
+    2000)
   }
 
   if (isLoading) {
